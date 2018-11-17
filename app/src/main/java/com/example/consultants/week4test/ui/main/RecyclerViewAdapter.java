@@ -1,14 +1,17 @@
 package com.example.consultants.week4test.ui.main;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.consultants.week4test.R;
 import com.example.consultants.week4test.model.NYResponse.School;
+import com.example.consultants.week4test.ui.SAT.SATActivity;
 
 import java.util.List;
 
@@ -29,13 +32,25 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerViewAdapter.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull final RecyclerViewAdapter.ViewHolder viewHolder, final int i) {
         School school = schoolList.get(i);
 
         viewHolder.tvName.setText("Name: " + school.getSchoolName());
         viewHolder.tvCity.setText("City: " + school.getCity());
         viewHolder.tvGrades.setText("Grades: " + school.getGrades2018());
         viewHolder.tvWebsite.setText("Rating: " + school.getWebsite());
+
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(viewHolder.itemView.getContext(), SATActivity.class);
+                intent.putExtra(SATActivity.SCHOOL_DBN, schoolList.get(i).getDbn());
+                viewHolder.itemView.getContext().startActivity(intent);
+
+                Toast.makeText(viewHolder.itemView.getContext(), schoolList.get(i).getCity(),
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

@@ -1,7 +1,7 @@
 package com.example.consultants.week4test.model.remote;
 
 import com.example.consultants.week4test.NetworkHelper;
-import com.example.consultants.week4test.model.NYResponse.NYResponse;
+import com.example.consultants.week4test.model.NYResponse.SAT;
 import com.example.consultants.week4test.model.NYResponse.School;
 
 import java.util.List;
@@ -32,5 +32,9 @@ public class RemoteDataSource {
     //using rxjava
     public Observable<List<School>> getSchoolObs() {
         return getRemoteService().getSchoolObs();
+    }
+
+    public Observable<List<SAT>> getScoreObs() {
+        return getRemoteService().getScoreObs();
     }
 }

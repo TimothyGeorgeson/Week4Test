@@ -3,7 +3,7 @@ package com.example.consultants.week4test.ui.main;
 import android.util.Log;
 
 import com.example.consultants.week4test.model.NYResponse.School;
-import com.example.consultants.week4test.model.remote.NYCallback;
+import com.example.consultants.week4test.model.remote.school.SchoolCallback;
 import com.example.consultants.week4test.model.remote.NYRepository;
 
 import java.util.List;
@@ -21,7 +21,7 @@ public class MainPresenter implements MainContract.Presenter{
     @Override
     public void getSchools() {
 
-        repository.getSchools(new NYCallback() {
+        repository.getSchools(new SchoolCallback() {
             @Override
             public void onSuccess(List<School> schoolList) {
                 Log.d(TAG, "onSuccess: " + schoolList.size());
@@ -34,9 +34,7 @@ public class MainPresenter implements MainContract.Presenter{
 
             }
         });
-
     }
-
 
     @Override
     public void onAttach(MainContract.View view) {

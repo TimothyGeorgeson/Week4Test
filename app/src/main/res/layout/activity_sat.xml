@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".ui.SAT.SATActivity">
+
+    <TextView
+        android:padding="5dp"
+        android:id="@+id/tvSATName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="School Name"
+        android:textColor="@android:color/black"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tvSATScores"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="SAT Scores"
+        android:textColor="@android:color/black"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tvSATMath"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Math: "
+        android:textColor="@android:color/black"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tvSATReading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Reading: "
+        android:textColor="@android:color/black"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tvSATWriting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Writing: "
+        android:textColor="@android:color/black"
+        android:textSize="25sp" />
+
+</LinearLayout>

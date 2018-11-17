@@ -1,6 +1,5 @@
-package com.example.consultants.week4test.model.remote;
+package com.example.consultants.week4test.model.remote.school;
 
-import com.example.consultants.week4test.model.NYResponse.NYResponse;
 import com.example.consultants.week4test.model.NYResponse.School;
 
 import java.util.List;
@@ -8,11 +7,11 @@ import java.util.List;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
-public class RemoteObserver implements Observer<List<School>> {
+public class RemoteObserverSchool implements Observer<List<School>> {
 
-    NYCallback callback;
+    SchoolCallback callback;
 
-    public RemoteObserver(NYCallback callback) {
+    public RemoteObserverSchool(SchoolCallback callback) {
         this.callback = callback;
     }
 
