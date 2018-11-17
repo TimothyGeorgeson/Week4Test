@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.consultants.week4test.R;
 import com.example.consultants.week4test.model.NYResponse.School;
@@ -47,8 +46,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 intent.putExtra(SATActivity.SCHOOL_DBN, schoolList.get(i).getDbn());
                 viewHolder.itemView.getContext().startActivity(intent);
 
-                Toast.makeText(viewHolder.itemView.getContext(), schoolList.get(i).getCity(),
-                        Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -6,11 +6,14 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.example.consultants.week4test.R;
+import com.example.consultants.week4test.di.DaggerSATComponent;
 import com.example.consultants.week4test.model.NYResponse.SAT;
 import com.example.consultants.week4test.model.remote.NYRepository;
 import com.example.consultants.week4test.model.remote.RemoteDataSource;
 
 import java.util.List;
+
+import javax.inject.Inject;
 
 public class SATActivity extends AppCompatActivity implements SATContract.View {
     public static final String TAG = SATActivity.class.getSimpleName() + "_TAG";
@@ -20,6 +23,8 @@ public class SATActivity extends AppCompatActivity implements SATContract.View {
     TextView tvSATMath;
     TextView tvSATReading;
     TextView tvSATWriting;
+
+    @Inject
     SATPresenter presenter;
 
     @Override
@@ -32,7 +37,7 @@ public class SATActivity extends AppCompatActivity implements SATContract.View {
         tvSATReading = findViewById(R.id.tvSATReading);
         tvSATWriting = findViewById(R.id.tvSATWriting);
 
-        presenter = new SATPresenter(new NYRepository(new RemoteDataSource()));
+        DaggerSATComponent.create().inject(this);
     }
 
     @Override
